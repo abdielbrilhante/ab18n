@@ -1,6 +1,6 @@
 {
   "name": "ab18n",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Minimal i18n library for React and JavaScript",
   "author": "abdielbrilhante",
   "license": "MIT",

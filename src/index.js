@@ -1,22 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as i18n from './lib/config'
+import { LocaleProvider, Translate, translate } from './lib/translate'
 
-import styles from './styles.css'
+const { config, set, full, ...transform } = i18n
+export { config, set, full }
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+const { t, c, n } = transform
+export { t, c, n }
 
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export { LocaleProvider, Translate, translate }

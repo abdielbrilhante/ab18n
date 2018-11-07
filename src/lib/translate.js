@@ -17,7 +17,7 @@ export const Translate = ({ render, ...props }) => (
 export class LocaleProvider extends React.Component {
   constructor() {
     super()
-    this.state = { config: i18n.full() }
+    this.state = { config: i18n.get() }
     i18n.onLocaleChange(config => this.setState({ config }))
   }
 

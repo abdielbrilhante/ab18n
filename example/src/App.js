@@ -43,7 +43,7 @@ export default class App extends Component {
   }
 
   changeLocale = () => {
-    if (i18n.full().locale === 'en-US') {
+    if (i18n.get().locale === 'en-US') {
       i18n.set('br')
     } else {
       i18n.set('en-US')

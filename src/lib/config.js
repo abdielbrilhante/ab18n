@@ -25,11 +25,11 @@ export function set(iso) {
   return data
 }
 
-export function full() {
+export function get() {
   return data
 }
 
-const withConfig = fn => (...args) => fn(full(), ...args)
+const withConfig = fn => (...args) => fn(get(), ...args)
 
 export const t = withConfig(transform.t)
 export const c = withConfig(transform.c)

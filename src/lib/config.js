@@ -4,29 +4,29 @@ import * as transform from './transform'
 let availableLocales = {}
 
 let data = {
-	locale: '',
-	currency: '',
-	dictionary: {},
+  locale: '',
+  currency: '',
+  dictionary: {},
 }
 
 export function config(locales) {
-	availableLocales = { ...locales }
-	publish('onConfig')
+  availableLocales = { ...locales }
+  publish('onConfig')
 }
 
 export function set(iso) {
-	const localeData = availableLocales[iso]
+  const localeData = availableLocales[iso]
 
-	if (localeData) {
-		data = { ...localeData }
-		publish('onLocaleChange', data)
-	}
+  if (localeData) {
+    data = { ...localeData }
+    publish('onLocaleChange', data)
+  }
 
-	return data
+  return data
 }
 
 export function full() {
-	return data
+  return data
 }
 
 const withConfig = fn => (...args) => fn(full(), ...args)

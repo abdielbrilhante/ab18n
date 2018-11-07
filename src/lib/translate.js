@@ -3,15 +3,15 @@ import * as i18n from './config'
 import Context from './context'
 
 export const translate = Component => props => (
-	<Context.Consumer>
-		{ () => <Component {...props} /> }
-	</Context.Consumer>
+  <Context.Consumer>
+    { () => <Component {...props} /> }
+  </Context.Consumer>
 )
 
 export const Translate = ({ render, ...props }) => (
-	<Context.Consumer>
-		{ () => React.createElement(render, props) }
-	</Context.Consumer>
+  <Context.Consumer>
+    { () => React.createElement(render, props) }
+  </Context.Consumer>
 )
 
 export class LocaleProvider extends React.Component {

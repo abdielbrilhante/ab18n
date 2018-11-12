@@ -55,6 +55,12 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0"
   },
+  "keywords": [
+    "i18n",
+    "translation",
+    "internationalization",
+    "react"
+  ],
   "files": [
     "dist"
   ]

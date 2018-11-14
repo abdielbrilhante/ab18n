@@ -21,9 +21,10 @@ function getPhrase (config, path = '', count) {
 export function t (config, path, params = {}) {
   let phrase = getPhrase(config, path, params.count)
 
-  for (const key of Object.keys(params)) {
-    const regex = new RegExp(`{${key}}`, 'g')
-    phrase = phrase.replace(regex, params[key])
+  const keys = Object.keys(params)
+  for (let i = 0; i < keys.length; i++) {
+    const regex = new RegExp(`{${keys[i]}}`, 'g')
+    phrase = phrase.replace(regex, params[keys[i]])
   }
 
   return phrase

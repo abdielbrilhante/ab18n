@@ -30,9 +30,10 @@ export function t (config, path, params = {}) {
   return phrase
 }
 
-export function c (config, value = 0) {
+export function c (config, value) {
+  const safeValue = value || 0
   const { locale, currency } = config
-  return value.toLocaleString(locale, {
+  return safeValue.toLocaleString(locale, {
     style: 'currency',
     currency,
   })

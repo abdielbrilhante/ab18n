@@ -9,9 +9,13 @@ i18n.config({
     currency: 'BRL',
     dictionary: {
       button: 'Mudar idioma',
+      defaultNotice: 'Aviso',
       root: {
         nested: {
           withParams: 'Bagunçando, {name}!'
+        },
+        ref: {
+          notice: '[defaultNotice] sobre algo'
         }
       }
     }
@@ -21,9 +25,13 @@ i18n.config({
     currency: 'USD',
     dictionary: {
       button: 'Change locale',
+      defaultNotice: 'Notice',
       root: {
         nested: {
           withParams: 'Heeere\'s {name}!'
+        },
+        ref: {
+          notice: '[defaultNotice] about something'
         }
       }
     }
@@ -31,7 +39,10 @@ i18n.config({
 })
 
 const Child = ({ name }) => (
-  <h2>{ t('root.nested.withParams', { name }) }</h2>
+  <div>
+    <h2>{ t('root.nested.withParams', { name }) }</h2>
+    <h5>{ t('root.ref.notice') }</h5>
+  </div>
 )
 
 const DecoChild = translate(Child)

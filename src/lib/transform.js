@@ -27,6 +27,14 @@ export function t (config, path, params = {}) {
     phrase = phrase.replace(regex, params[keys[i]])
   }
 
+  const refs = phrase.match(/\[\w+\]/g) || []
+  for (let i = 0; i < refs.length; i++) {
+    phrase = phrase.replace(
+      refs[i],
+      t(config, refs[i].substring(1, refs[i].length - 1), params),
+    )
+  }
+
   return phrase
 }
 
